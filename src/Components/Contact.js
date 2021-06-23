@@ -34,7 +34,7 @@ export default function Contact() {
     };
 
     return (
-        <div className="App">
+        <div className="container">
             <p>Contact form</p>
             <form
                 className="input-form"
