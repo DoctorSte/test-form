@@ -60,10 +60,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="container">
+    <div className="text-white">
       <p>Contact form</p>
       <form
-        className="input-form"
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         id="contact"
         name="contact"
         required
@@ -75,6 +75,7 @@ export default function Contact() {
           type="text"
           placeholder="Name"
           required
+          className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           // onChange={handleInput}
         />
         <input
@@ -83,12 +84,14 @@ export default function Contact() {
           type="email"
           placeholder="Email"
           required
+          className="shadow appearance-none border rounded w-full py-2 px-3 mb-2  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           // onChange={handleInput}
         />
         <textarea
           id="message"
           name=" message" // name should matched with your airtable table field
           placeholder="Message"
+          className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           // onChange={handleInput}
         />
         <ul>
@@ -100,7 +103,7 @@ export default function Contact() {
               onChange={onChoiceChange}
             />
             <label htmlFor="choice_1">
-              <img src="https://picsum.photos/seed/1/100" />
+              <img src="https://picsum.photos/seed/1/100" alt=''/>
             </label>
           </li>
           <li>
@@ -111,7 +114,7 @@ export default function Contact() {
               onChange={onChoiceChange}
             />
             <label htmlFor="choice_2">
-              <img src="https://picsum.photos/seed/2/100" />
+              <img src="https://picsum.photos/seed/2/100" alt=''/>
             </label>
           </li>
           <li>
@@ -122,7 +125,7 @@ export default function Contact() {
               onChange={onChoiceChange}
             />
             <label htmlFor="choice_3">
-              <img src="https://picsum.photos/seed/3/100" />
+              <img src="https://picsum.photos/seed/3/100" alt=''/>
             </label>
           </li>
           <li>
@@ -133,7 +136,7 @@ export default function Contact() {
               onChange={onChoiceChange}
             />
             <label htmlFor="choice_4">
-              <img src="https://picsum.photos/seed/4/100" />
+              <img src="https://picsum.photos/seed/4/100" alt=''/>
             </label>
           </li>
         </ul>
