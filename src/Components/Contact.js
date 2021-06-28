@@ -3,10 +3,10 @@ import React, { useState, useRef } from "react";
 const formFields = ["name", "email", "message"];
 
 export default function Contact() {
- /* const [formData, setFormData] = useState({}); */
+  /* const [formData, setFormData] = useState({}); */
   const [message, setMessage] = useState("");
   const choices = useRef([]);
-/*
+  /*
   const handleInput = (e) => {
     const copyFormData = { ...formData };
     copyFormData[e.target.name] = e.target.value;
@@ -16,8 +16,8 @@ export default function Contact() {
 
   const onChoiceChange = ({ target: { checked, name } }) => {
     if (checked) choices.current.push(name);
-    else if(choices.current.includes(name)) {
-        choices.current =choices.current.filter(choice => choice !== name)
+    else if (choices.current.includes(name)) {
+      choices.current = choices.current.filter((choice) => choice !== name);
     }
   };
 
@@ -33,9 +33,9 @@ export default function Contact() {
       return acc;
     }, {});
 
-    payload['choice'] = choices.current
-    console.log(payload)
-    sendData(payload)
+    payload["choice"] = choices.current;
+    console.log(payload);
+    sendData(payload);
   };
 
   const sendData = async (payload) => {
@@ -55,7 +55,7 @@ export default function Contact() {
       setMessage("This Worked!");
     } catch (error) {
       console.error("Error:", error);
-      setMessage("What the fuck");
+      setMessage("What the hell");
     }
   };
 
@@ -94,7 +94,8 @@ export default function Contact() {
           className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           // onChange={handleInput}
         />
-        <ul className='flex'>
+        {/*         
+        <ul className="flex">
           <li>
             <input
               type="checkbox"
@@ -104,7 +105,11 @@ export default function Contact() {
               className="form-checkbox h-5 w-5 peer"
             />
             <label htmlFor="choice_1">
-              <img className=" border-2 rounded peer-checked:border-red-50"  src="https://picsum.photos/seed/1/100" alt=''/>
+              <img
+                className=" border-2 rounded peer-checked:border-red-50"
+                src="https://picsum.photos/seed/1/100"
+                alt=""
+              />
               <p className="text-black peer-hover:text-red">Choice name</p>
             </label>
           </li>
@@ -115,9 +120,13 @@ export default function Contact() {
               id="choice_2"
               className="form-checkbox h-5 w-5"
               onChange={onChoiceChange}
-              />
+            />
             <label htmlFor="choice_2">
-              <img className=" border-2 rounded peer-checked:border-red-50" src="https://picsum.photos/seed/2/100" alt=''/>
+              <img
+                className=" border-2 rounded peer-checked:border-red-50"
+                src="https://picsum.photos/seed/2/100"
+                alt=""
+              />
               <p className="text-black peer-checked:text-red">Choice name</p>
             </label>
           </li>
@@ -130,39 +139,117 @@ export default function Contact() {
               onChange={onChoiceChange}
             />
             <label htmlFor="choice_3">
-              <img className=" border-2 rounded peer-checked:border-red-50"  src="https://picsum.photos/seed/3/100" alt=''/>
+              <img
+                className=" border-2 rounded peer-checked:border-red-50"
+                src="https://picsum.photos/seed/3/100"
+                alt=""
+              />
               <p className="text-black peer-checked:text-red">Choice name</p>
-              </label>
+            </label>
           </li>
           <li className="pl-2">
             <input
               type="checkbox"
               name="4"
               id="choice_4"
-              className="form-checkbox h-5 w-5"
+              className="form-checkbox h-5 w-5 peer"
               onChange={onChoiceChange}
             />
-            <label htmlFor="choice_4">
-              <img className=" border-2 rounded peer-checked:border-red-50" src="https://picsum.photos/seed/4/100" alt=''/>
+            <label htmlFor="choice_4 ">
+              <img
+                className=" border-2 rounded peer-checked:border-red-50"
+                src="https://picsum.photos/seed/4/100"
+                alt=""
+              />
               <p className="text-black peer-checked:text-red">Choice name</p>
-              
             </label>
-            
-    
           </li>
         </ul>
-    
-      /*  <label>
-  <input type="checkbox" class="peer" />
-  <span class="h-4 w-4 bg-gray-200 peer-checked:bg-blue-500">Test</span>
-</label>*/
+         */}
 
+        <div className="flex space-x-4 ">
+          <label>
+            <input
+              type="checkbox"
+              name="1"
+              id="choice_1"
+              onChange={onChoiceChange}
+              class="form-checkbox h-5 w-5 peer transition duration-100 appearance-none "
+            />
+            <img
+              className="z-0 border-2 rounded peer-checked:border-blue-500 transition duration-100 cursor-pointer"
+              src="https://picsum.photos/seed/1/100"
+              alt=""
+            />
+            <p className="text-black peer-checked:text-blue-500 transition duration-100">
+              Choice 1
+            </p>
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="2"
+              id="choice_2"
+              onChange={onChoiceChange}
+              class="form-checkbox h-5 w-5 peer transition duration-100 appearance-none "
+            />
+            <img
+              className=" border-2 rounded peer-checked:border-blue-500 transition duration-100 cursor-pointer"
+              src="https://picsum.photos/seed/2/100"
+              alt=""
+            />
+            <p className="text-black peer-checked:text-blue-500 transition duration-100">
+              Choice 2
+            </p>
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="3"
+              id="choice_3"
+              onChange={onChoiceChange}
+              class="form-checkbox h-5 w-5 peer transition duration-100 appearance-none "
+            />
+            <img
+              className=" border-2 rounded peer-checked:border-blue-500 transition duration-100 cursor-pointer"
+              src="https://picsum.photos/seed/3/100"
+              alt=""
+            />
+            <p className="text-black peer-checked:text-blue-500 transition duration-100">
+              Choice 3
+            </p>
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="4"
+              id="choice_4"
+              onChange={onChoiceChange}
+              class="form-checkbox h-5 w-5 peer transition duration-100 appearance-none "
+            />
+            <img
+              className=" border-2 rounded peer-checked:border-blue-500 transition duration-100 cursor-pointer"
+              src="https://picsum.photos/seed/4/100"
+              alt=""
+            />
+            <p className="text-black peer-checked:text-blue-500 transition duration-100">
+              Choice 4
+            </p>
+          </label>
+        </div>
         <br />
         <div className="flex justify-between">
-        <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="submit" type="submit" value="Send" />
-        <p className="text-black pt-2"> {message}</p>
+          <input
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            name="submit"
+            type="submit"
+            value="Send"
+          />
+          <p className="text-black pt-2"> {message}</p>
         </div>
-        
       </form>
     </div>
   );
