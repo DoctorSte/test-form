@@ -3,16 +3,16 @@ import React, { useState, useRef } from "react";
 const formFields = ["name", "email", "message"];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({});
+ /* const [formData, setFormData] = useState({}); */
   const [message, setMessage] = useState("");
   const choices = useRef([]);
-
+/*
   const handleInput = (e) => {
     const copyFormData = { ...formData };
     copyFormData[e.target.name] = e.target.value;
     setFormData(copyFormData);
     console.log(copyFormData);
-  };
+  }; */
 
   const onChoiceChange = ({ target: { checked, name } }) => {
     if (checked) choices.current.push(name);
@@ -61,7 +61,7 @@ export default function Contact() {
 
   return (
     <div className="text-white">
-      <p>Contact form</p>
+      <p className="pt-6">Contact form</p>
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         id="contact"
@@ -94,55 +94,75 @@ export default function Contact() {
           className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           // onChange={handleInput}
         />
-        <ul>
+        <ul className='flex'>
           <li>
             <input
               type="checkbox"
               name="1"
               id="choice_1"
               onChange={onChoiceChange}
+              className="form-checkbox h-5 w-5 peer"
             />
             <label htmlFor="choice_1">
-              <img src="https://picsum.photos/seed/1/100" alt=''/>
+              <img className=" border-2 rounded peer-checked:border-red-50"  src="https://picsum.photos/seed/1/100" alt=''/>
+              <p className="text-black peer-hover:text-red">Choice name</p>
             </label>
           </li>
-          <li>
+          <li className="pl-2">
             <input
               type="checkbox"
               name="2"
               id="choice_2"
+              className="form-checkbox h-5 w-5"
               onChange={onChoiceChange}
-            />
+              />
             <label htmlFor="choice_2">
-              <img src="https://picsum.photos/seed/2/100" alt=''/>
+              <img className=" border-2 rounded peer-checked:border-red-50" src="https://picsum.photos/seed/2/100" alt=''/>
+              <p className="text-black peer-checked:text-red">Choice name</p>
             </label>
           </li>
-          <li>
+          <li className="pl-2">
             <input
               type="checkbox"
               name="3"
               id="choice_3"
+              className="form-checkbox h-5 w-5"
               onChange={onChoiceChange}
             />
             <label htmlFor="choice_3">
-              <img src="https://picsum.photos/seed/3/100" alt=''/>
-            </label>
+              <img className=" border-2 rounded peer-checked:border-red-50"  src="https://picsum.photos/seed/3/100" alt=''/>
+              <p className="text-black peer-checked:text-red">Choice name</p>
+              </label>
           </li>
-          <li>
+          <li className="pl-2">
             <input
               type="checkbox"
               name="4"
               id="choice_4"
+              className="form-checkbox h-5 w-5"
               onChange={onChoiceChange}
             />
             <label htmlFor="choice_4">
-              <img src="https://picsum.photos/seed/4/100" alt=''/>
+              <img className=" border-2 rounded peer-checked:border-red-50" src="https://picsum.photos/seed/4/100" alt=''/>
+              <p className="text-black peer-checked:text-red">Choice name</p>
+              
             </label>
+            
+    
           </li>
         </ul>
+    
+      /*  <label>
+  <input type="checkbox" class="peer" />
+  <span class="h-4 w-4 bg-gray-200 peer-checked:bg-blue-500">Test</span>
+</label>*/
+
         <br />
-        <input name="submit" type="submit" value="Send" />
-        <br /> {message}
+        <div className="flex justify-between">
+        <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="submit" type="submit" value="Send" />
+        <p className="text-black pt-2"> {message}</p>
+        </div>
+        
       </form>
     </div>
   );

@@ -4,10 +4,10 @@ import "./index.css"
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-gray-900 w-screen justify-center">
       
      
-      <div className="bg-gray-900 p-20 flex justify-center items-start flex-col">
+      <div className="p-20 flex justify-center items-start flex-col max-w-4xl m-auto">
       <h1 className="text-2xl text-white">Hi there 👋</h1>
       <p className="text-gray-400 mt-5 text-lg text-left">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
